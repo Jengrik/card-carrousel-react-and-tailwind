@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line @typescript-eslint/no-var-requires, no-undef
+const plugin = require('tailwindcss/plugin');
+
 export default {
   content: ['index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
@@ -27,8 +30,32 @@ export default {
         poppins: ['Poppins', 'sans-serif'],
       },
       colors: {
+        grayScale: {
+					5: '#E9EAEC',
+					50: '#D5D5D9',
+					100: '#BFC0C6',
+					200: '#ABABB3',
+					300: '#9697A1',
+					400: '#80828E',
+					500: '#6B6C7A',
+					600: '#565868',
+					700: '#414255',
+					800: '#323345',
+				},
       }
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'translate-z': (value) => ({
+            '--tw-translate-z': value,
+            transform: ` translate3d(var(--tw-translate-x), var(--tw-translate-y), var(--tw-translate-z)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))`,
+          }),
+        },
+        { values: theme('translate'), supportsNegativeValues: true }
+      )
+    })
+  ],
 }
