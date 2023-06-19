@@ -1,7 +1,5 @@
 import "tailwindcss/tailwind.css";
-import Card from "./components/Card";
 import Carrousel from "./components/Carrousel";
-import ArrowHead from "./assets/icons/ArrowHead";
 
 // import ViteLogo from "./assets/images/ViteLogo";
 // import ReactLogo from "./assets/images/ReactLogo";

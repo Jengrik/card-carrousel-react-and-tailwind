@@ -72,7 +72,7 @@ const selectVisibility = (id: number, active: number): string => {
   return "";
 };
 
-const Carrousel = ({ data, activeCards = 1 }: Props) => {
+const Carrousel = ({ data }: Props) => {
   const [active, setActive] = React.useState<number>(0);
 
   return (
