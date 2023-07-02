@@ -242,7 +242,7 @@ const Carrousel = ({
           You can't see the Large Carrousel on a Mobile Device.
         </p>
       )}
-      <p className="mb-7 sm:mb-0">{`Carrousel Type: ${
+      <p className="mb-7 text-xsm leading-xsm font-normal sm:text-regular sm:mb-0">{`Carrousel Type: ${
         carrouselType === CARROUSEL_TYPE.SINGLE
           ? "Single ( 1 Pos )"
           : "Large ( 3 Pos )"

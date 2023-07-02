@@ -28,14 +28,14 @@ function App() {
     const quantity: number = parseInt(event.target.value);
     if (isNaN(quantity)) {
       setWrongData(true);
-      createDummyData(1);
+      createDummyData(5);
     } else {
       setWrongData(false);
       createDummyData(quantity);
     }
   };
 
-  const createDummyData = (quantity = 1) => {
+  const createDummyData = (quantity = 5) => {
     const DummyCardData: CardStructure = {
       Title: "Title",
       SubTitle: "Subtitle",
@@ -61,18 +61,18 @@ function App() {
   return (
     <>
       <Presentation />
-      <div className="flex flex-col mb-7">
-        <label htmlFor="quantity">Enter the quantity of cards:</label>
+      <div className="flex flex-col mb-7 text-xs sm:text-regular">
+        <label htmlFor="quantity">Enter the desired quantity of cards:</label>
         <input
           type="number"
-          placeholder="Enter the quantity here!"
+          placeholder="5"
           id="quantity"
           className="border-2 text-center"
           onChange={changeDataQuantity}
         />
         {wrongData && (
           <p className="text-xsm leading-xsm font-normal text-red-600">
-            You entered a wrong quantity. It will be replaced by 1.
+            You entered a wrong quantity. It will be replaced by 5.
           </p>
         )}
       </div>
